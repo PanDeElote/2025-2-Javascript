@@ -6,10 +6,14 @@ async function main() {
   const genere = await ask('¿Cuál es tu género? (hombre/mujer) ');
 
   if ((age >= 1 && age < 18) && (genere === 'hombre')) {
-    console.log('Eres un hombre menor de edad');
+    console.log('Eres un niño');
   } else if ((age >= 18 && age < 65) && (genere === 'hombre')) {
     console.log('Eres un hombre mayor de edad');
-  } else {
+  } else if ((age >= 1 && age < 18) && (genere === 'mujer')){
+    console.log('Eres una niña');
+  } else if ((age >= 18 && age < 65) && (genere === 'mujer')){
+    console.log('Eres una mujer mayor de edad')
+  }else {
     console.log('No se cumplen los valores de búsqueda');
   }
 }

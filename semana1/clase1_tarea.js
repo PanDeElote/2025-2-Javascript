@@ -15,3 +15,40 @@ async function main() {
 }
 
 main();
+
+//MI VERSIÓN 
+const { ask } = require('../helpers/input.js');
+
+async function main() {
+  console.log('Ingresa los números con los que trabajaremos');
+  const num = Number(await ask('Ingresa un número: '));
+  const otronum = Number(await ask('Ingresa el segundo número: '));
+  const operacion = String(await ask('suma, resta, multiplicación o división? (1, 2, 3 o 4 respectivamente): '))
+  
+  if ( operacion == 1)
+  {
+    Suma = num + otronum;
+    console.log(` ${num} + ${otronum} = ${Suma}`);
+  } else 
+  {
+    if ( operacion == 2){
+        Resta = num - otronum;
+        console.log(` ${num} - ${otronum} = ${Resta}`);
+    }
+    else{
+        if ( operacion == 3){
+            Mult = num * otronum;
+            console.log(` ${num} * ${otronum} = ${Mult}`);
+        } 
+        else{
+            Division = num / otronum;
+            console.log(` ${num} / ${otronum} = ${Division}`);
+        }
+    }
+    
+
+  }
+  
+}
+
+main();
