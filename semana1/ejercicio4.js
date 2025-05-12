@@ -9,7 +9,7 @@ const { ask } = require('../helpers/input');
 
 // TODO: Función que devuelve el mayor de dos números
 
-function obtenerMayor(num1, num2) {
+/*function obtenerMayor(num1, num2) {
   if (num1 > num2) {
     return "Numero 1 es mayor" + num1;
   } else {
@@ -29,4 +29,23 @@ async function main() {
 
 }
 
-main();
+main();*/
+
+
+function obtenerMayor(num1, num2) {
+  if (num1 > num2) {
+    return "Numero 1 es mayor" + num1;
+  } else if (num1 < num2) {
+    return "Numero 2 es mayor" + num2;
+  } else{
+    return "Los números proporcionados son iguales";
+  }
+}
+
+async function main (){
+  const num1 = Number(await ask("Ingresa el primer número: "));
+  const num2 = Number(await ask("Ingresa el segundo número: "));
+  const resultado = obtenerMayor(num1, num2);
+  console.log(resultado);
+}
+main ();
