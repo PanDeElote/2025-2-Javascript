@@ -9,7 +9,7 @@ const { ask } = require('../helpers/input');
 
 function diffDays(actualDate, birthDate) {
   const diff = actualDate - birthDate;
-  const edadEnDias = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const edadEnDias = Math.floor(diff / (1000 * 60 * 60 * 24 /*Para meses y el año  * 30 * 12*/));
 
   return edadEnDias;
 }
