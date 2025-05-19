@@ -48,7 +48,7 @@ async function main(){
             let salirSiNo = await ask('Estás seguro de querer salir del programa? Si o No?');
             if (salirSiNo === "No"){
                 console.log('Presione otra opción del menú.');
-                return; //DUDAAAAAAA//
+                option = 3;
             } else{
                 console.log('Gracias por usar el programa!');
             }
