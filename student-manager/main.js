@@ -17,6 +17,10 @@ function addStudent() { //Función para únicamente ingresar datos
     alert("Debes de capturar un nombre válido");
     return;
   }
+  if (name === "" || name === isNaN) {
+    alert("Debes de capturar un nombre válido");
+    return;
+  }
   const grade = parseFloat(document.getElementById("gradeInput").value);
   if (grade > 100 || grade < 0) { //NOTA GENERAL: es mejor que lo que vaya dentro del IF sean las restricciones
     alert("Debes de capturar una calificación válida");
@@ -32,6 +36,7 @@ function addStudent() { //Función para únicamente ingresar datos
   students.push(student);
 
   saveToLocalStorage();
+  saveToLocalStorage();
   displayStudents();
   updateAverage();
 }
@@ -43,6 +48,7 @@ function displayStudents() {
   for (let i = 0; i < students.length; i++) {
     const li = document.createElement("li");
     li.innerHTML = `
+      <p>${students[i].name} - ${students[i].grade} - ${students[i].status} </p>
       <p>${students[i].name} - ${students[i].grade} - ${students[i].status} </p>
     `;
     list.appendChild(li);
@@ -63,5 +69,6 @@ function updateAverage() {
 }
 
 function saveToLocalStorage() {
+  localStorage.setItem("students", JSON.stringify(students));
   localStorage.setItem("students", JSON.stringify(students));
 }
